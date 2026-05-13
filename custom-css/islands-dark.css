@@ -852,3 +852,21 @@
 .notifications-center {
   animation: islands-emerge 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
+/* Copilot chat fixes */
+.chat-list-container {
+  overflow-y: auto !important;
+}
+
+.chat-attached-context {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.context-attachments {
+  overflow: visible !important;
+}
+
+.interactive-input-part {
+  overflow: visible !important;
+}
