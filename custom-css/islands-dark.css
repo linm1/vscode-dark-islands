@@ -383,7 +383,7 @@
 	transform: translateY(-10px) !important;
 }
 
-.part.activitybar .action-item .action-label {
+.part.activitybar .composite-bar .action-item .action-label {
 	font-size: 22px !important;
 	width: 34px !important;
 	height: 34px !important;
@@ -394,20 +394,20 @@
 	overflow: visible !important;
 }
 
-.part.activitybar .action-item .action-label .codicon {
+.part.activitybar .composite-bar .action-item .action-label .codicon {
 	font-size: 22px !important;
 }
 
-.part.activitybar .action-item .action-label img {
+.part.activitybar .composite-bar .action-item .action-label img {
 	max-width: 22px !important;
 	max-height: 22px !important;
 }
 
-.part.activitybar .action-item .active-item-indicator {
+.part.activitybar .composite-bar .action-item .active-item-indicator {
 	display: none !important;
 }
 
-.part.activitybar .action-item.checked .action-label {
+.part.activitybar .composite-bar .action-item.checked .action-label {
 	background: linear-gradient(180deg, rgba(55,56,62,0.9), rgba(40,41,46,0.7)) !important;
 	border-radius: 50% !important;
 	width: 30px !important;
@@ -415,14 +415,14 @@
 	box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.12), inset 1px 0 0 0 rgba(255,255,255,0.06), inset 0 -1px 0 0 rgba(255,255,255,0.02), inset -1px 0 0 0 rgba(255,255,255,0.02), inset 0 1px 2px 0 rgba(255,255,255,0.05), 0 1px 3px 0 rgba(0,0,0,0.3) !important;
 }
 
-.part.activitybar .actions-container {
+.part.activitybar .composite-bar .actions-container {
 	align-items: center !important;
 	justify-content: center !important;
 	width: 100% !important;
 	overflow: visible !important;
 }
 
-.part.activitybar .action-item {
+.part.activitybar .composite-bar .action-item {
 	display: flex !important;
 	justify-content: center !important;
 	width: 100% !important;
@@ -434,6 +434,16 @@
 	overflow: visible !important;
 	transform: scale(0.8) !important;
 	transform-origin: top right !important;
+}
+
+/* Guard: prevent compact-menubar dropdown items (which render inside .part.activitybar)
+   from inheriting the 22px/34px icon sizing above. */
+.part.activitybar .monaco-menu .action-label,
+.part.activitybar .monaco-menu .action-label .codicon {
+	font-size: inherit !important;
+	width: auto !important;
+	height: auto !important;
+	line-height: normal !important;
 }
 
 /* Top activity bar (activityBar.location: top) — horizontal pill inside sidebar title */
@@ -879,17 +889,17 @@
    ============================================================= */
 
 /* Drop morph when switching, then settle into a breathing glow */
-.part.activitybar .action-item.checked .action-label {
+.part.activitybar .composite-bar .action-item.checked .action-label {
   animation:
     islands-drop-morph 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     islands-breathe 4s ease-in-out 0.5s infinite !important;
 }
 
 /* Hover glow on all activity bar icons */
-.part.activitybar .action-item .action-label {
+.part.activitybar .composite-bar .action-item .action-label {
   transition: filter 0.3s ease !important;
 }
-.part.activitybar .action-item:hover .action-label {
+.part.activitybar .composite-bar .action-item:hover .action-label {
   filter: drop-shadow(0 0 5px rgba(13,188,121,0.25)) !important;
 }
 
