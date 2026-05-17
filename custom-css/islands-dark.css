@@ -56,7 +56,7 @@
 }
 
 .explorer-viewlet .split-view-container {
-	margin-top: -22px !important;
+	margin-top: 0 !important;
 }
 
 .part.sidebar .header {
