@@ -955,3 +955,12 @@
 .interactive-input-part {
   overflow: visible !important;
 }
+
+/* Overview ruler fix — let scrollbar/ruler render past .part.editor rounded clip */
+.part.editor {
+	overflow: visible !important;
+}
+.part.editor .decorationsOverviewRuler,
+.part.editor .editor-scrollable > .scrollbar.vertical {
+	z-index: 1000 !important;
+}
